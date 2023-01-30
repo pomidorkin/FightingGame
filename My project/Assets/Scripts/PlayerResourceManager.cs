@@ -18,7 +18,8 @@ public class PlayerResourceManager : MonoBehaviour
 
     private void UpdateResourceText()
     {
-        resourceText.text = "Resource Amount: " + resourceAmount;
+        // TODO: Do smt like 1mil instead of 1.000.000 (regular expression)
+        resourceText.text = resourceAmount.ToString();
     }
 
     public void IncreaseAddAmount(int amount)
