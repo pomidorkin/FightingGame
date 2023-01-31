@@ -6,6 +6,8 @@ abstract public class HeroParent : MonoBehaviour
 {
     [SerializeField] AbilityBar myAbilityBar;
     Canvas canvas;
+    [SerializeField] int stars;
+    [SerializeField] int price;
 
     // Start is called before the first frame update
     void Start()
