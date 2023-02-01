@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mapper
   m_EditorClassIdentifier: 
   allHeroes:
-  - {fileID: 4403198800465536548, guid: f20d47e3c3745df458ccd0363c7e4039, type: 3}
-  - {fileID: 4403198800465536548, guid: f20d47e3c3745df458ccd0363c7e4039, type: 3}
-  - {fileID: 4403198800465536548, guid: f20d47e3c3745df458ccd0363c7e4039, type: 3}
+  - {fileID: 3196850314428256265, guid: f20d47e3c3745df458ccd0363c7e4039, type: 3}
+  - {fileID: 3196850314428256265, guid: f20d47e3c3745df458ccd0363c7e4039, type: 3}
+  - {fileID: 3196850314428256265, guid: f20d47e3c3745df458ccd0363c7e4039, type: 3}

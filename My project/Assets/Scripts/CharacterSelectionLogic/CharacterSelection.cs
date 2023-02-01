@@ -6,6 +6,7 @@ public class CharacterSelection : MonoBehaviour
 {
     [SerializeField] private HeroParent selectedHero;
     [SerializeField] private SelectionUnitManager selectionUnitManager;
+    [SerializeField] private PopulateScrollContent populateScrollContent;
     public static CharacterSelection Instance { get; private set; }
     void Awake()
     {
@@ -40,5 +41,10 @@ public class CharacterSelection : MonoBehaviour
     public SelectionUnitManager GetSelectionUnitManager()
     {
         return selectionUnitManager;
+    }
+
+    public PopulateScrollContent GetPopulateScrollContent()
+    {
+        return populateScrollContent;
     }
 }

@@ -6,12 +6,15 @@ using TMPro;
 
 public class SelectionUnit : MonoBehaviour
 {
-    [SerializeField] HeroParent heroPrefab;
+    //[SerializeField] HeroParent heroPrefab;
+    private HeroParent heroPrefab;
     private CharacterSelection characterSelection;
     [SerializeField] Image frameFocusImage;
     [SerializeField] Button readyButton;
     //[SerializeField] Color selectedColor;
     //[SerializeField] Color defaultColor;
+    private PopulateScrollContent populateScrollContent;
+    private SavingMapper savingMapper;
 
     // Selection Unit Card Setting Variables
     [SerializeField] RawImage characterImage;
@@ -23,6 +26,11 @@ public class SelectionUnit : MonoBehaviour
         characterSelection = FindObjectOfType<CharacterSelection>();
         characterSelection.GetSelectionUnitManager().AddSelectionUnit(this);
         readyButton = FindObjectOfType<PopulateScrollContent>().GetReadyButton();
+
+        populateScrollContent = characterSelection.GetPopulateScrollContent();
+        savingMapper = populateScrollContent.GetSavingMapper();
+        //heroPrefab = savingMapper.dict[populateScrollContent.currentId];
+        heroPrefab = savingMapper.GetHeroById(populateScrollContent.currentId);
         SetCharacterSelectionCard();
     }
 
