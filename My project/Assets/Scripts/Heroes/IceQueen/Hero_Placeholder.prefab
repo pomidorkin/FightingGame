@@ -96,3 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAbilityBar: {fileID: 3869369439449431141, guid: f72e29ae99215674fa31fee81bbdfc49, type: 3}
+  stars: 4
+  price: 100
+  characterName: Ice Queen
+  characterImage: {fileID: 4403198800465536549}

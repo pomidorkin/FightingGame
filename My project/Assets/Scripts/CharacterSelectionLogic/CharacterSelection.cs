@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour
 {
     [SerializeField] private HeroParent selectedHero;
+    [SerializeField] private SelectionUnitManager selectionUnitManager;
     public static CharacterSelection Instance { get; private set; }
     void Awake()
     {
@@ -34,5 +35,10 @@ public class CharacterSelection : MonoBehaviour
         {
             throw new System.Exception("No heroes selected");
         }
+    }
+
+    public SelectionUnitManager GetSelectionUnitManager()
+    {
+        return selectionUnitManager;
     }
 }
