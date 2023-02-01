@@ -21,6 +21,8 @@ public class SelectionUnit : MonoBehaviour
     [SerializeField] TMP_Text characterName;
     [SerializeField] GameObject[] stars;
 
+    public int id;
+
     private void Start()
     {
         characterSelection = FindObjectOfType<CharacterSelection>();
@@ -30,7 +32,8 @@ public class SelectionUnit : MonoBehaviour
         populateScrollContent = characterSelection.GetPopulateScrollContent();
         savingMapper = populateScrollContent.GetSavingMapper();
         //heroPrefab = savingMapper.dict[populateScrollContent.currentId];
-        heroPrefab = savingMapper.GetHeroById(populateScrollContent.currentId);
+        //heroPrefab = savingMapper.GetHeroById(populateScrollContent.currentId);
+        heroPrefab = savingMapper.GetHeroById(id);
         SetCharacterSelectionCard();
     }
 

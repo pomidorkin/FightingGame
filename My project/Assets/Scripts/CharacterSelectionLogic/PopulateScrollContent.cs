@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class PopulateScrollContent : MonoBehaviour
 {
     [SerializeField] SavingMapper savingMapper;
-    [SerializeField] GameObject characterSelectionPrefab;
-    [SerializeField] GameObject characterLockedPrefab;
+    [SerializeField] SelectionUnit characterSelectionPrefab;
+    [SerializeField] CharacterLockedCard characterLockedPrefab;
     [SerializeField] GameObject parentContentObject;
     [SerializeField] Button readyButton;
     private SaveManager saveManager;
 
-    public int currentId = 0;
+    //public int currentId = 0;
 
     private void Awake()
     {
@@ -23,17 +23,22 @@ public class PopulateScrollContent : MonoBehaviour
         savingMapper.RemapHeroes();
         for (int i = 0; i < savingMapper.dict.Count; i++)
         {
-            currentId = i;
+            //currentId = i;
             if (saveManager.State.purchased[i])
             {
-                var purchasedChar = Instantiate(characterSelectionPrefab); // Instantiate(savingMapper.dict[i])
+                /*var purchasedChar = Instantiate(characterSelectionPrefab); // Instantiate(savingMapper.dict[i])
+                purchasedChar.transform.SetParent(parentContentObject.transform, false);*/
+                SelectionUnit purchasedChar = Instantiate<SelectionUnit>(characterSelectionPrefab); // Instantiate(savingMapper.dict[i])
                 purchasedChar.transform.SetParent(parentContentObject.transform, false);
-                //purchasedChar.transform.parent = parentContentObject.transform;
+                purchasedChar.id = i;
             }
             else
             {
-                var lockedChar = Instantiate(characterLockedPrefab); // Instantiate(savingMapper.dict[i])
+                /*var lockedChar = Instantiate(characterLockedPrefab); // Instantiate(savingMapper.dict[i])
+                lockedChar.transform.SetParent(parentContentObject.transform, false);*/
+                CharacterLockedCard lockedChar = Instantiate<CharacterLockedCard>(characterLockedPrefab);
                 lockedChar.transform.SetParent(parentContentObject.transform, false);
+                lockedChar.id = i;
             }
         }
     }
@@ -43,10 +48,10 @@ public class PopulateScrollContent : MonoBehaviour
         return readyButton;
     }
 
-    public int GetCurrentId()
+    /*public int GetCurrentId()
     {
         return currentId;
-    }
+    }*/
 
     public SavingMapper GetSavingMapper()
     {

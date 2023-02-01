@@ -16,6 +16,8 @@ public class CharacterLockedCard : MonoBehaviour
     [SerializeField] TMP_Text characterName;
     [SerializeField] GameObject[] stars;
 
+    public int id;
+
     private void Start()
     {
         characterSelection = FindObjectOfType<CharacterSelection>();
@@ -24,7 +26,9 @@ public class CharacterLockedCard : MonoBehaviour
         populateScrollContent = characterSelection.GetPopulateScrollContent();
         savingMapper = populateScrollContent.GetSavingMapper();
         //heroPrefab = savingMapper.dict[populateScrollContent.currentId];
-        heroPrefab = savingMapper.GetHeroById(populateScrollContent.currentId);
+        //Debug.Log(populateScrollContent.currentId);
+        //heroPrefab = savingMapper.GetHeroById(populateScrollContent.currentId);
+        heroPrefab = savingMapper.GetHeroById(id);
         SetCharacterSelectionCard();
     }
 

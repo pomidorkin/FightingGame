@@ -975,11 +975,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savingMapper: {fileID: 11400000, guid: c61e81bf520e5cf428abb3673e8e8e16, type: 2}
-  characterSelectionPrefab: {fileID: 2887502661774676388, guid: 09db25d94f71ba545b1ed232ee46c747, type: 3}
-  characterLockedPrefab: {fileID: 2155817825225339872, guid: b035b2926f22bee4ea7199001297ff8b, type: 3}
+  characterSelectionPrefab: {fileID: 2887502661774676390, guid: 09db25d94f71ba545b1ed232ee46c747, type: 3}
+  characterLockedPrefab: {fileID: 5473154557007568131, guid: b035b2926f22bee4ea7199001297ff8b, type: 3}
   parentContentObject: {fileID: 8466345618288643565}
   readyButton: {fileID: 8466345619197552676}
-  currentId: 0
 --- !u!114 &845476292
 MonoBehaviour:
   m_ObjectHideFlags: 0
