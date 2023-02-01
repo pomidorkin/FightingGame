@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class HeroSpawner : MonoBehaviour
 {
-    [SerializeField] HeroParent hero;
+    private CharacterSelection characterSelection;
+    //[SerializeField] HeroParent hero;
+    private HeroParent hero;
 
     private void Start()
     {
-        Instantiate(hero);
+        characterSelection = FindObjectOfType<CharacterSelection>();
+        Instantiate(characterSelection.GetSelectedHero());
     }
 }

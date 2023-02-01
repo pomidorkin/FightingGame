@@ -7,6 +7,6 @@ public class MySceneManager : MonoBehaviour
 {
     public void LoadNewScene(int sceneId)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneId);
     }
 }
