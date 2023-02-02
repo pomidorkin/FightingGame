@@ -13,6 +13,8 @@ abstract public class HeroParent : MonoBehaviour
     [SerializeField] SpriteRenderer characterImage;
     [SerializeField] Image heroImage;
 
+    [SerializeField] private int heroHealth;
+
     // Start is called before the first frame update
     void Start()
     {
