@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;using System;
 
 abstract public class HeroParent : MonoBehaviour
 {
@@ -14,6 +14,20 @@ abstract public class HeroParent : MonoBehaviour
     [SerializeField] Image heroImage;
 
     [SerializeField] private int heroHealth;
+    private int initialHealth;
+
+    public class HeroHealthDecreasedActionEventArgs : EventArgs
+    {
+        public int NewHealth { get; set; }
+    }
+
+    public delegate void HeroDecreaseHealthAction(object source, HeroHealthDecreasedActionEventArgs args);
+    public event HeroDecreaseHealthAction OnHealthDecreased;
+
+    private void OnEnable()
+    {
+        initialHealth = heroHealth;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -46,5 +60,29 @@ abstract public class HeroParent : MonoBehaviour
     public Sprite GetCharacterImage()
     {
         return characterImage.sprite;
+    }
+
+    public void DecreasePlayerHealth(int amount)
+    {
+        if (heroHealth > amount)
+        {
+            heroHealth -= amount;
+        }
+        else
+        {
+            // Game Over
+            heroHealth = 0;
+        }
+        OnHealthDecreased(this, new HeroHealthDecreasedActionEventArgs() { NewHealth = heroHealth });
+    }
+
+    public int GetHeroHealth()
+    {
+        return heroHealth;
+    }
+
+    public int GetInitialHeroHealth()
+    {
+        return initialHealth;
     }
 }
